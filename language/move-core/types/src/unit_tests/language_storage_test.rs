@@ -39,7 +39,7 @@ fn test_type_tag_deserialize_case_insensitive() {
     let current_json = serde_json::to_string(&org_struct_tag).unwrap();
 
     let upper_case_json = format!(
-        r##"{{"address":"{}","module":"TestModule","name":"TestStruct","type_params":["U8","U16","U32","U64","U128","U256","Bool","Address","Signer"]}}"##,
+        r##"{{"address":"{}","module":"TestModule","name":"TestStruct",""type_args"":["U8","U16","U32","U64","U128","U256","Bool","Address","Signer"]}}"##,
         AccountAddress::ONE
     );
     let upper_case_decoded = serde_json::from_str(upper_case_json.as_str()).unwrap();
